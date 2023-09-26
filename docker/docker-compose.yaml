@@ -8,5 +8,6 @@ services:
       dockerfile: docker/Dockerfile
       args:
         SISYPHUS_API_SERVER: ${SISYPHUS_API_SERVER}
+        SISYPHUS_DB_SERVER: ${SISYPHUS_DB_SERVER}
     ports:
       - 3000:3000

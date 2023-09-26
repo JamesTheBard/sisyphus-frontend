@@ -20,7 +20,9 @@ RUN \
 FROM base AS builder
 
 ARG SISYPHUS_API_SERVER
+ARG SISYPHUS_DB_SERVER
 ENV NEXT_PUBLIC_SISYPHUS_API=${SISYPHUS_API_SERVER:-http://localhost:5000}
+ENV NEXT_PUBLIC_SISYPHUS_DB=${SISYPHUS_DB_SERVER:-http://localhost:8081}
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
