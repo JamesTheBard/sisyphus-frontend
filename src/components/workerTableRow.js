@@ -19,11 +19,11 @@ export default function WorkerTableRow({ worker }) {
         }
         <br />
         { worker.job_title
-        ? <span className="badge badge-accent badge-sm text-black font-bold">worker.job_title</span>
+        ? <span className="badge badge-accent badge-sm text-black font-bold">{ worker.job_title }</span>
         : <span className="badge badge-ghost badge-sm font-bold">Idle</span>}
       </td>
         { worker.progress
-        ? <td className="text-xl font-bold text-center">{ Math.trunc(worker.progress * 10) / 10 }</td>
+        ? <td className="text-xl font-bold text-center">{ (Math.trunc(worker.progress * 10) / 10).toFixed(1) }%</td>
         : <td className="text-xl font-bold text-center text-slate-500">—</td> }
       <th className="text-center">
         { worker.task
