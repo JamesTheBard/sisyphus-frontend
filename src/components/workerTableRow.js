@@ -11,7 +11,12 @@ export default function WorkerTableRow({ worker }) {
         </div>
       </td>
       <td>
-        <progress className="progress progress-secondary" value={0} max="100"></progress>
+        { worker.task
+        ? ( worker.progress
+          ? <progress className="progress progress-secondary" value={ worker.progress } max="100"></progress>
+          : <progress className="progress progress-secondary" max="100"></progress> )
+        : <progress className="progress progress-secondary" value={0} max="100"></progress>
+        }
         <br />
         { worker.job_title
         ? <span className="badge badge-accent badge-sm text-black font-bold">worker.job_title</span>
