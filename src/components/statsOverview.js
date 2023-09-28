@@ -11,7 +11,7 @@ export default function StatsOverview({ queue, workers, status, server }) {
           <h2 className="card-title float-left">API Server <div className="badge badge-neutral">{server.version}</div></h2>
         </div>
         <div className="float-right">
-          <div className="badge badge-black"><IconArrowUpCircle />&nbsp;{ server.uptime }</div>
+          <div className="badge badge-success"><IconArrowUpCircle />&nbsp;{ server.uptime }</div>
       
         </div>
         </div>
