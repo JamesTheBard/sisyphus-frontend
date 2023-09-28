@@ -1,3 +1,5 @@
+name: sisyphus-frontend
+
 services:
   frontend:
     restart: always
