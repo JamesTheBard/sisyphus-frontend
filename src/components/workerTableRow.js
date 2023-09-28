@@ -19,7 +19,7 @@ export default function WorkerTableRow({ worker }) {
         }
         <br />
         { worker.job_title
-        ? <span className="badge badge-accent badge-sm text-black font-bold">{ worker.job_title }</span>
+        ? <span className="badge badge-success badge-sm text-black">{ worker.job_title }</span>
         // : <span className="badge badge-ghost badge-sm font-bold">Idle</span>}
         : ""}
       </td>
