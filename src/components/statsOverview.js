@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 
-export default function StatsOverview({ queue, workers, status }) {
+export default function StatsOverview({ queue, workers, status, version }) {
 
   return (
     <div className="card w-2/3 shadow-xl">
       <div className="card-body">
-        <h2 className="card-title">Server Stats</h2>
+        <h2 className="card-title">API Server<div className="badge badge-neutral">{ version }</div></h2>
         <div className="stats shadow">
 
           <div className="stat">
