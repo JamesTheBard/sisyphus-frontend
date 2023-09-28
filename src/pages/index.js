@@ -49,7 +49,7 @@ export default function Home() {
       <main
         className={`flex flex-col items-center ${inter.className} bg-black`}
       >
-        <StatsOverview queue={queueData} workers={workerData} status={queueData.attributes.disabled} version={serverData.version} />
+        <StatsOverview queue={queueData} workers={workerData} server={serverData} />
         <WorkerStatus workers={workerData} />
       </main>
       {/* <div className="fixed bottom-0 mx-auto w-full">
