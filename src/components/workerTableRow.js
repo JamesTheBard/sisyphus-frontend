@@ -5,7 +5,7 @@ export default function WorkerTableRow({ worker }) {
       <td>
         <div className="flex items-center space-x-3">
           <div>
-            <div className="font-bold font-mono text-lg">{ worker.hostname }</div>
+            <div className="font-bold text-lg">{ worker.hostname }</div>
             <div className="badge badge-sm">{ worker.version }</div>
           </div>
         </div>
@@ -20,11 +20,12 @@ export default function WorkerTableRow({ worker }) {
         <br />
         { worker.job_title
         ? <span className="badge badge-accent badge-sm text-black font-bold">{ worker.job_title }</span>
-        : <span className="badge badge-ghost badge-sm font-bold">Idle</span>}
+        // : <span className="badge badge-ghost badge-sm font-bold">Idle</span>}
+        : ""}
       </td>
         { worker.progress
         ? <td className="text-xl font-bold text-center">{ (Math.trunc(worker.progress * 10) / 10).toFixed(1) }%</td>
-        : <td className="text-xl font-bold text-center text-slate-500">—</td> }
+        : <td className="text-xl font-bold text-center text-slate-500"></td> }
       <th className="text-center">
         { worker.task
         ? <div className="badge badge-secondary text-center">{ worker.task }</div>

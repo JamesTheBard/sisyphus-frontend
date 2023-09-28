@@ -47,7 +47,7 @@ export default function Home() {
     <>
       <Navbar />
       <main
-        className={`flex flex-col items-center min-h-screen ${inter.className} bg-black`}
+        className={`flex flex-col items-center ${inter.className} bg-black`}
       >
         <StatsOverview queue={queueData} workers={workerData} status={queueData.attributes.disabled} version={serverData.version} />
         <WorkerStatus workers={workerData} />
