@@ -6,7 +6,7 @@ export default function WorkerTableRow({ worker }) {
         <div className="flex items-center space-x-3">
           <div>
             <div className="font-bold text-lg">{ worker.hostname }</div>
-            <div className="badge badge-sm">{ worker.version }</div>
+            <div className="badge badge-sm font-bold">{ worker.version }</div>
           </div>
         </div>
       </td>

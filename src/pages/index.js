@@ -5,6 +5,7 @@ import StatsOverview from '@/components/statsOverview'
 import { useEffect, useState } from 'react'
 import WorkerStatus from '@/components/workerTable'
 import Footer from '@/components/footer'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,6 +46,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Sisyphus Status</title>
+      </Head>
       <Navbar />
       <main
         className={`flex flex-col items-center ${inter.className} bg-black`}
