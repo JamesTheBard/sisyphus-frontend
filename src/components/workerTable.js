@@ -12,6 +12,7 @@ export default function WorkerStatus({ workers }) {
             {/* head */}
             <thead>
               <tr>
+                <th className="w-20">Enabled</th>
                 <th className="w-40">Hostname</th>
                 <th>Progress</th>
                 <th className="w-24 text-center"></th>

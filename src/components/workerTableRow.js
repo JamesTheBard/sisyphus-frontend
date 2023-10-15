@@ -1,7 +1,25 @@
+import { useState } from "react"
+import axios from "axios"
+
 export default function WorkerTableRow({ worker }) {
 
+  const apiUrl = process.env.NEXT_PUBLIC_SISYPHUS_API
+  const [toggle, setToggle] = useState(!worker.attributes.disabled)
+
+  const toggleClass = () => {
+    setToggle(!toggle)
+  }
+
+  const changeState = () => {
+    axios.patch(apiUrl + '/workers/' + worker.worker_id, {disabled: toggle})
+      .then((response) => {
+        setToggle(!response.data.disabled)
+      })
+  }
+
   return (
-    <tr>
+    <tr className={ toggle ? "opacity-100" : "opacity-50" }>
+      <td><input onClick={changeState} type="checkbox" className="toggle toggle-secondary" defaultChecked={ toggle ? true : false } /></td>
       <td>
         <div className="flex items-center space-x-3">
           <div>
@@ -29,10 +47,7 @@ export default function WorkerTableRow({ worker }) {
       <th className="text-center">
         { worker.task
         ? <div className="badge badge-secondary text-center">{ worker.task }</div>
-        : ( worker.attributes.disabled
-          ? <div className="badge text-center badge-error">disabled</div>
-          : <div className="badge text-center">idle</div> )
-        }
+        : <div className="badge text-center">idle</div> }
       </th>
     </tr>
   )
