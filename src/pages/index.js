@@ -14,7 +14,7 @@ export default function Home() {
 
   const apiUrl = process.env.NEXT_PUBLIC_SISYPHUS_API
   const [workerData, setWorkerData] = useState({ workers: [] })
-  const [queueData, setQueueData] = useState({ attributes: { disabled: false } })
+  const [queueData, setQueueData] = useState({ attributes: {} })
   const [serverData, setServerData] = useState({ version: "Unknown", uptime: "Unknown" })
 
   useEffect(() => {
