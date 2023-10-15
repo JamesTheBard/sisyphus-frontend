@@ -6,10 +6,6 @@ export default function WorkerTableRow({ worker }) {
   const apiUrl = process.env.NEXT_PUBLIC_SISYPHUS_API
   const [toggle, setToggle] = useState(!worker.attributes.disabled)
 
-  const toggleClass = () => {
-    setToggle(!toggle)
-  }
-
   const changeState = () => {
     axios.patch(apiUrl + '/workers/' + worker.worker_id, {disabled: toggle})
       .then((response) => {
